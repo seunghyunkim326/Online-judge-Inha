@@ -1,0 +1,12 @@
+# 강을 건너기 위해 다리를 설치 -> 서쪽 N개, 동쪽 M개 -> 서쪽과 동쪽 연결해야함(한 사이트에 최대 한 개의 다리만 연결 가능함)
+# 서쪽 사이트 개수만큼(N) 다리를 지으려한다. 다리끼리 겹칠 수 없다 -> 다리를 지을 수 있는 경우의 수
+# 서쪽, 동쪽 N, M개 사이트 주어짐 -> 다리를 지을 수 있는 경우의 수
+N, M = map(int, input().split())
+num1, num2, num3 = 1, 1, 1
+for i in range(1, M+1):
+    num1 *= i
+for j in range(1, M-N+1):
+    num2 *= j
+for k in range(1, N+1):
+    num3 *= k
+print(int(num1/(num2*num3)))
