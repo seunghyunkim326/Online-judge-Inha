@@ -1,0 +1,14 @@
+# A, B 두 집합의 대칭 차집합의 원소의 개수를 출력하는 프로그램 -> (A-B), (B-A)의 합집합
+# 첫줄 A의 원소 개수, B의 원소 개수 -> 둘째 줄 A의 모든 원소 -> 셋째 줄 B의 모든 원소
+N1, N2 = map(int, input().split())
+A = list(map(int, input().split()))
+B = list(map(int, input().split()))
+same = []
+for i in range(N1):
+    temp = A[i]
+    for j in range(N2):
+        if temp == B[j]:
+            same.append(temp)
+        else:
+            pass
+print(N1+N2-2*len(same))
