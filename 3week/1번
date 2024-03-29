@@ -1,0 +1,15 @@
+# 3주차-1 : 길이가 N인 정수 배열 A, B S = A[0] × B[0] + ... + A[N-1] × B[N-1] S를 가장 작게 만들기 위해 A의 수 재배열, but B의 수는 건들면 X
+# S의 최솟값을 출력하는 프로그램
+# 첫줄 N, 둘째 줄 A에 있는 N개의 수 순서대로, 셋째 줄 B에 있는 수 순서대로, N<=50 자연수, A, B의 각 원소는 <=100 음 아닌 정수 -> 최솟값 S 출력
+N = int(input())
+result = 0
+A = list(map(int, input().split()))
+B = list(map(int, input().split()))
+
+A2 = sorted(A)
+B2 = sorted(B, reverse=True)
+for i in range(N):
+    result += A2[i] * B2[i]
+print(result)
+# print(A)
+# print(B)
